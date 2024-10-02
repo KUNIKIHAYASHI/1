@@ -1,0 +1,17 @@
+<h1>Posts</h1>
+<%= link_to 'New Post', new_post_path %>
+
+<% @posts.each do |post| %>
+  <div>
+    <p><strong><%= post.posted_at.strftime("%Y-%m-%d %H:%M") %></strong></p>
+    <p><%= post.content %></p>
+    <% if post.image.attached? %>
+      <%= image_tag post.image %>
+    <% end %>
+    <p>
+      <%= link_to 'Show', post %> |
+      <%= link_to 'Edit', edit_post_path(post) %> |
+      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+  </div>
+<% end %>
