@@ -10,7 +10,6 @@
 #       Install PostgreSQL and put its /bin directory on your path.
 #
 # Configure Using Gemfile
-# gem "pg"
 #
 default: &default
   adapter: postgresql
@@ -78,9 +77,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  <<: *default
   adapter: postgresql
   encoding: unicode
-  database: test_qlzy
-  username: test_qlzy_user
+  pool: 5
   password: <%= ENV["L1_DATABASE_PASSWORD"] %>
-  host: localhost
+  url: <%= ENV['DATABASE_URL'] %>

@@ -32,5 +32,6 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 workers ENV.fetch("WEB_CONCURRENCY") {2}
 # Allow puma to be restarted by `bin/rails restart` command.
-plugin :tmp_restart
 preload_app!
+plugin :tmp_restart
+
