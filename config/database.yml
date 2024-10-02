@@ -78,7 +78,10 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: l1_production
-  username: l1
+  adapter: postgresql
+  encoding: unicode
+  database: test_qlzy
+  username: test_qlzy_user
   password: <%= ENV["L1_DATABASE_PASSWORD"] %>
+  host: localhost
+  port: 5432
