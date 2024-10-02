@@ -84,4 +84,4 @@ production:
   username: test_qlzy_user
   password: <%= ENV["L1_DATABASE_PASSWORD"] %>
   host: localhost
-  port: 5432
+  port: 8080
